@@ -1,0 +1,8 @@
+name: openclaw-mem
+title: OpenClaw Persistent Memory
+description: Search, store, and retrieve memories across all sessions. Use the 3-layer workflow - memory_search (index) then memory_timeline (context) then memory_get (full details).
+command: __VENV_PYTHON__
+args:
+  - __INSTALL_DIR__/openclaw_mem/server.py
+env:
+  OPENCLAW_MEM_DB: __DATA_DIR__/memory.db

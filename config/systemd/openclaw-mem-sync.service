@@ -1,0 +1,20 @@
+[Unit]
+Description=OpenClaw Memory Sync (import + synthesize)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/openclaw-mem
+ExecStart=%h/openclaw-mem/.venv/bin/python3 -m openclaw_mem.synthesizer --daily-sync
+Environment=HOME=%h
+Environment=OPENCLAW_MEM_DB=%h/.openclaw-mem/memory.db
+Environment=OPENCLAW_WORKSPACE=%h/.openclaw/workspace
+# Set these if using a remote LLM API:
+# Environment=OPENCLAW_MEM_LLM_BASE_URL=http://127.0.0.1:4000/v1
+# Environment=OPENCLAW_MEM_LLM_API_KEY=your-key
+# Environment=OPENCLAW_MEM_LLM_MODEL=qwen35-35b
+TimeoutStartSec=300
+
+[Install]
+WantedBy=default.target

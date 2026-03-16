@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "openclaw-mem": {
+      "command": "/Users/usuario/openclaw-mem/.venv/bin/python3",
+      "env": {
+        "OPENCLAW_MEM_DB": "/Users/usuario/.openclaw-mem/memory.db"
+      }
+    }
+  },
+  "imports": []
+}

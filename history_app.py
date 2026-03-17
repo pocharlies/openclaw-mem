@@ -142,4 +142,4 @@ if __name__ == '__main__':
     print("🚀 OpenClaw Conversation History starting...")
     print("📍 URL: http://localhost:5001")
     print("🔒 Local access only")
-    app.run(host='127.0.0.1', port=5001, debug=False)
+    app.run(host='127.0.0.1', port=5002, debug=False)

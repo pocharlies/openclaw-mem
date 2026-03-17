@@ -39,8 +39,8 @@ cd /Users/usuario/openclaw-mem
 ```
 
 This will start both web apps:
-- Dashboard: http://localhost:5000
-- History: http://localhost:5001
+- Dashboard: http://localhost:5001
+- History: http://localhost:5002
 
 ### Stop the Dashboard
 

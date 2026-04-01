@@ -241,6 +241,14 @@ def search_fts(
     tags: Optional[str] = None,
 ) -> list[dict]:
     """Full-text search using FTS5 with BM25 ranking."""
+    # Sanitize query for FTS5: quote each token to avoid operator/column interpretation
+    # e.g. "openclaw-mem plugin" → '"openclaw-mem" "plugin"'
+    sanitized_tokens = []
+    for token in query.split():
+        escaped = token.replace('"', '""')
+        sanitized_tokens.append(f'"{escaped}"')
+    query = " ".join(sanitized_tokens)
+
     conditions = ["o.is_active = 1"]
     params = []
 
